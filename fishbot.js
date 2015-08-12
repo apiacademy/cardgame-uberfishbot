@@ -30,19 +30,17 @@ function fb() {
   }  
 
   function topLevel() {
-    var elm, data;
+    var elm, data, flg;
 
     elm = d.find("top");
     if(elm) {
       data = g.body.uber.data;
-      for(i=0,x=data.length;i<x;i++) {
-        if(data[i].url) {
-          processLink(data[i], elm);
-        }
+      if(data.length>0) {
+        processData(data,elm);
       }
     }
   }
-  
+
   function dump() {
     var elm;
 
@@ -52,13 +50,37 @@ function fb() {
     }
   }  
 
+  function processData(data, elm) {
+    var i, x;
+    for(i=0,x=data.length;i<x;i++) {
+      if(data[i].url) {
+        processLink(data[i], elm);
+        continue;
+      }
+      processValue(data[i], elm);
+    }
+  }
+  
   function processLink(data, elm) {
     var a;
     
     a = d.anchor({"rel":data.rel,"href":data.url,"text":(data.label||data.url)});
     d.push(a, elm);
-    
+    if(data.data) {
+      processData(data.data, elm);
+    }
   }
+
+  function processValue(data, elm) {
+    var s;
+
+    s = d.data({"text":data.label,"value":data.value})
+    d.push(s, elm);
+    if(data.data) {
+      processData(data.data,elm);
+    }
+  }
+  
   // ********************************
   // ajax helpers
   // ********************************

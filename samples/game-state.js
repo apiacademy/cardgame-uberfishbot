@@ -219,7 +219,7 @@
               },
               {
                 "name" : "avatar",
-                "value" : "http://example.com/cardgame/avatars/aqswde",
+                "url" : "http://example.com/cardgame/avatars/aqswde",
                 "rel" : "image",
                 "transclude" : "true"
               }
@@ -241,7 +241,7 @@
               },
               {
                 "name" : "avatar",
-                "value" : "http://example.com/cardgame/avatars/zaxscd",
+                "url" : "http://example.com/cardgame/avatars/zaxscd",
                 "rel" : "image",
                 "transclude" : "true"
               }
