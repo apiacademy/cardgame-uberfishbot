@@ -25,6 +25,25 @@ function fb() {
   }
 
   function parse() {
+    dump();
+    topLevel();
+  }  
+
+  function topLevel() {
+    var elm, data;
+
+    elm = d.find("top");
+    if(elm) {
+      data = g.body.uber.data;
+      for(i=0,x=data.length;i<x;i++) {
+        if(data[i].url) {
+          processLink(data[i], elm);
+        }
+      }
+    }
+  }
+  
+  function dump() {
     var elm;
 
     elm = d.find("dump");
@@ -32,12 +51,18 @@ function fb() {
       elm.innerText = JSON.stringify(g.body, null, 2);
     }
   }  
-  
+
+  function processLink(data, elm) {
+    var a;
+    
+    a = d.anchor({"rel":data.rel,"href":data.url,"text":(data.label||data.url)});
+    d.push(a, elm);
+    
+  }
   // ********************************
   // ajax helpers
   // ********************************
   // mid-level HTTP handlers
-
 
   function httpGet(e) {
     req(e.target.href, "get", null);
