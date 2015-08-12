@@ -4,5 +4,16 @@
   </head>
   <body>
     <h1>FishBot</h1>
+    <div>
+      <pre id="dump"></pre>
+    </div>
   </body>
+  <script src="dom-help.js">//na </script>
+  <script src="fishbot.js">//na </script>
+  <script>
+    window.onload = function() {
+      var pg = fb();
+      pg.init("https://rawgit.com/apiacademy/cardgame-uberfishbot/master/samples/game-state.js");
+    }
+  </script>
 </html>
