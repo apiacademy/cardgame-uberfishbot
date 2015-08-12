@@ -77,13 +77,7 @@
       },
       {
         "id" : "players",
-        "value" : "???",
-        "label" : "Players"
-      },
-      {
-        "id" : "books",
-        "value" : "???",
-        "label" : "Books", 
+        "label" : "Players",
         "data" : [
           {
             "name" : "player",
@@ -129,6 +123,75 @@
               }
             ]
           }          
+        ]
+      },
+      {
+        "id" : "books",
+        "label" : "Books", 
+        "data" : [
+          {
+            "name" : "player",
+            "label" : "Player",
+            "data" : [
+              {
+                "name" : "name",
+                "value" : "Ronnie",
+                "label" : "Name",
+                "data" : [
+                  {
+                    "name" : "book",
+                    "label" : "Book",
+                    "data" : [
+                      {
+                        "name" : "rank",
+                        "value" : "4",
+                        "label" : "Rank"
+                      },
+                      {
+                        "name" : "rank",
+                        "value" : "Q",
+                        "label" : "Rank"
+                      }
+                    ]
+                  }
+                ]
+              }  
+            ]
+          },
+          {
+            "name" : "player",
+            "label" : "Player",
+            "data" : [
+              {
+                "name" : "name",
+                "value" : "Irakli",
+                "label" : "Name",
+                "data" : [
+                  {
+                    "name" : "book",
+                    "label" : "Book",
+                    "data" : [
+                      {
+                        "name" : "rank",
+                        "value" : "5",
+                        "label" : "Rank"
+                      },
+                      {
+                        "name" : "rank",
+                        "value" : "9",
+                        "label" : "Rank"
+                      },
+                      {
+                        "name" : "rank",
+                        "value" : "J",
+                        "label" : "Rank"
+                      }
+                    ]
+                  }
+                ]
+              }  
+            ]
+          }
         ]
       },
       {
