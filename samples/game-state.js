@@ -40,7 +40,10 @@
       {
         "id" : "hands",
         "value" : "???",
-        "label" : "Hands"
+        "label" : "Hands",
+        "data" : [
+          
+        ]
       },
       {
         "id" : "OpponentsCardCount",
@@ -80,7 +83,53 @@
       {
         "id" : "books",
         "value" : "???",
-        "label" : "Books"
+        "label" : "Books", 
+        "data" : [
+          {
+            "name" : "player",
+            "label" : "Player",
+            "data" : [
+              {
+                "name" : "name",
+                "value" : "Ronnie",
+                "label" : "Name"
+              },
+              {
+                "name" : "id",
+                "value" : "aqswde",
+                "label" : "ID"
+              },
+              {
+                "name" : "avatar",
+                "value" : "http://example.com/cardgame/avatars/aqswde",
+                "rel" : "image",
+                "transclude" : "true"
+              }
+            ]
+          },
+          {
+            "name" : "player",
+            "label" : "Player",
+            "data" : [
+              {
+                "name" : "name",
+                "value" : "Irakli",
+                "label" : "Name"
+              },
+              {
+                "name" : "id",
+                "value" : "zaxscd",
+                "label" : "ID"
+              },
+              {
+                "name" : "avatar",
+                "value" : "http://example.com/cardgame/avatars/zaxscd",
+                "rel" : "image",
+                "transclude" : "true"
+              }
+            ]
+          }          
+        ]
       },
       {
         "id" : "winner",
