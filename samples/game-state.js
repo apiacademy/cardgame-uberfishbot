@@ -39,7 +39,6 @@
       },
       {
         "id" : "hands",
-        "value" : "???",
         "label" : "Hands",
         "data" : [
           {
@@ -114,12 +113,12 @@
                     "data" : [
                       {                
                         "name" : "rank",
-                        "value" : "3",
+                        "value" : "?",
                         "label" : "Rank"
                       },
                       {
                         "name" : "suit",
-                        "value" : "Diamonds",
+                        "value" : "?",
                         "label" : "Suit"
                       }
                     ]
@@ -129,12 +128,12 @@
                     "data" : [
                       {                
                         "name" : "rank",
-                        "value" : "7",
+                        "value" : "?",
                         "label" : "Rank"
                       },
                       {
                         "name" : "suit",
-                        "value" : "Clubs",
+                        "value" : "?",
                         "label" : "Suit"
                       }
                     ]
@@ -144,12 +143,12 @@
                     "data" : [
                       {                
                         "name" : "rank",
-                        "value" : "K",
+                        "value" : "?",
                         "label" : "Rank"
                       },
                       {
                         "name" : "suit",
-                        "value" : "Clubs",
+                        "value" : "?",
                         "label" : "Suit"
                       }
                     ]
@@ -159,12 +158,12 @@
                     "data" : [
                       {                
                         "name" : "rank",
-                        "value" : "9",
+                        "value" : "?",
                         "label" : "Rank"
                       },
                       {
                         "name" : "suit",
-                        "value" : "Spades",
+                        "value" : "?",
                         "label" : "Suit"
                       }
                     ]
@@ -181,18 +180,13 @@
         "label" : "Opponents Card Count"
       },
       {
-        "id" : "myCards",
-        "value" : "???",
-        "label" : "My Cards"
-      },
-      {
         "id" : "activePlayer",
         "value" : "Ronnie",
         "label" : "Active Player"
       },
       {
         "id" : "gameState",
-        "value" : "???",
+        "value" : "active",
         "label" : "Game State"
       },
       {
