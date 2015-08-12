@@ -12,8 +12,8 @@ function fb() {
 
   g.url = '';
   g.body = null;
-  g.ctype = "application/vnd.uber+json";
-
+  g.ctype = "application/x-www-form-urlencoded";
+  g.atype = "application/vnd.uber+json"; 
   function init(url) {
     if(!url|| url === '') {
       alert("*** ERROR!\n\nMUST pass starting URL to the libary");
@@ -26,13 +26,13 @@ function fb() {
 
   function parse() {
     dump();
-    topLevel();
+    doc();
   }  
 
-  function topLevel() {
+  function doc() {
     var elm, data, flg;
 
-    elm = d.find("top");
+    elm = d.find("doc");
     if(elm) {
       data = g.body.uber.data;
       if(data.length>0) {
@@ -173,16 +173,15 @@ function fb() {
     }
     return false;
   }
+
   // low-level HTTP stuff
-
-
   function req(url, method, body) {
     var ajax = new XMLHttpRequest();
     ajax.onreadystatechange = function() {
       rsp(ajax)
     };
     ajax.open(method, url);
-    ajax.setRequestHeader("accept", g.ctype);
+    ajax.setRequestHeader("accept", g.atype);
     if (body && body !== null) {
       ajax.setRequestHeader("content-type", g.ctype);
     }
