@@ -1,5 +1,5 @@
 /*******************************************************
- * fishbot HTML/SPA client engine
+ * fishbot HTML/SPA client engine script
  * August 2015
  * Mike Amundsen (@mamund)
  * API Academy code sprint
@@ -14,6 +14,16 @@ function fb() {
   g.body = null;
   g.ctype = "application/x-www-form-urlencoded";
   g.atype = "application/vnd.uber+json"; 
+
+  g.actions = {
+    "append":"post",
+    "partial":"patch",
+    "read":"get",
+    "remove":"delete",
+    "replace":"put"
+  };
+  
+  // starts here
   function init(url) {
     if(!url|| url === '') {
       alert("*** ERROR!\n\nMUST pass starting URL to the libary");
@@ -41,6 +51,7 @@ function fb() {
     }
   }
 
+  // raw dump for debugging
   function dump() {
     var elm;
 
@@ -52,6 +63,7 @@ function fb() {
 
   function processData(data, elm) {
     var i, x;
+    
     for(i=0,x=data.length;i<x;i++) {
       if(data[i].url) {
         processLink(data[i], elm);
@@ -62,17 +74,43 @@ function fb() {
   }
   
   function processLink(data, elm) {
-    var a, div;
+    var link, div, flg;
 
-    if(!data.transclude || data.transclude==="false") {
-      a = d.anchor({"rel":data.rel,"href":data.url,"text":(data.label||data.url)});
-      d.push(a, elm);
-    }
-    else {
-      img = d.image({"rel":data.rel, "href":data.url, "title":(data.label||data.url)});
-      d.push(img, elm);
-    }
+    flg=false;
     
+    // safe form
+    /*
+    if(data.templated && data.templated==="true") {
+      processTemplate(data, elm);
+      flg=true;
+    }
+
+    // unsafe form
+    if(data.model) {
+      processModel(data, elm);
+      flg=true;
+    }
+    */
+    
+    // image
+    if(flg===false && (data.transclude && data.transclude==="true")) {
+      link = d.image({"rel":data.rel, "href":data.url, "title":(data.label||data.url)});
+      d.push(link, elm);
+      flg=true;
+    }
+
+    // anchor
+    if(flg===false) {
+      link = d.anchor({
+        "rel":data.rel,
+        "href":data.url,
+        "text":(data.label||data.url),
+        "className":"anchor"
+      });
+      d.push(link, elm);
+      flg=true;
+    }
+
     if(data.data) {
       div = d.node("div");
       div.className = "container";
@@ -80,7 +118,7 @@ function fb() {
       d.push(div,elm);
     }
   }
-
+  
   function processValue(data, elm) {
     var s, div;
 

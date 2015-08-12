@@ -1,4 +1,12 @@
 <html>
+  <!--
+  /*******************************************************
+   * fishbot HTML/SPA client engine markup
+   * August 2015
+   * Mike Amundsen (@mamund)
+   * API Academy code sprint
+   *******************************************************/
+  -->
   <head>
     <title>FishBot</title>
     <link rel="stylesheet" href="fishbot.css" />
@@ -12,8 +20,17 @@
   <script src="fishbot.js">//na </script>
   <script>
     window.onload = function() {
-      var pg = fb();
-      pg.init("https://rawgit.com/apiacademy/cardgame-uberfishbot/master/samples/game-state.js");
+      var pg, mock, home;
+
+      home = "http://academy.messages.io:5000";
+      mock = "https://rawgit.com/apiacademy/cardgame-uberfishbot/master/samples/game-state.js";
+      
+      pg = fb();
+      pg.init(home);
     }
   </script>
 </html>
+
+<!--
+      // pg.init();
+-->

@@ -1,7 +1,12 @@
-/*
-*/
+/*******************************************************
+ * fishbot HTML/SPA client engine styles
+ * August 2015
+ * Mike Amundsen (@mamund)
+ * API Academy code sprint
+ *******************************************************/
 
 .container {margin-left:1em;}
+.anchor {display:block;}
 
 span.prompt {font-weight:bold; padding-right:.2em;text-transform:capitalize;}
 span.prompt::after{content:":"}
