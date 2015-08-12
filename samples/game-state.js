@@ -99,6 +99,79 @@
                 ]
               }             
             ]
+          },
+          {
+            "name" : "player",
+            "value" : "Irakli",
+            "label" : "Player",
+            "data" : [
+              {
+                "name" : "cards",
+                "label" : "Cards",
+                "data" : [
+                  {
+                    "name" : "card",
+                    "data" : [
+                      {                
+                        "name" : "rank",
+                        "value" : "3",
+                        "label" : "Rank"
+                      },
+                      {
+                        "name" : "suit",
+                        "value" : "Diamonds",
+                        "label" : "Suit"
+                      }
+                    ]
+                  },
+                  {
+                    "name" : "card",
+                    "data" : [
+                      {                
+                        "name" : "rank",
+                        "value" : "7",
+                        "label" : "Rank"
+                      },
+                      {
+                        "name" : "suit",
+                        "value" : "Clubs",
+                        "label" : "Suit"
+                      }
+                    ]
+                  },
+                  {
+                    "name" : "card",
+                    "data" : [
+                      {                
+                        "name" : "rank",
+                        "value" : "K",
+                        "label" : "Rank"
+                      },
+                      {
+                        "name" : "suit",
+                        "value" : "Clubs",
+                        "label" : "Suit"
+                      }
+                    ]
+                  },
+                  {
+                    "name" : "card",
+                    "data" : [
+                      {                
+                        "name" : "rank",
+                        "value" : "9",
+                        "label" : "Rank"
+                      },
+                      {
+                        "name" : "suit",
+                        "value" : "Spades",
+                        "label" : "Suit"
+                      }
+                    ]
+                  }                  
+                ]
+              }             
+            ]
           }
         ]
       },
