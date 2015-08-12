@@ -68,9 +68,9 @@
         "label" : "Time Since Last Move"
       },
       {
-        "id" : "heartbeat",
+        "id" : "timeSinceLastHeartbeat",
         "value" : "???",
-        "label" : "Heartbeat"
+        "label" : "Time Since Last Heartbeat"
       },
       {
         "id" : "players",
