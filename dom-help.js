@@ -31,6 +31,7 @@ function domHelp() {
     var p, lbl, inp;
 
     p = node("p");
+    p.className = (args.className||"input");
     lbl = node("label");
     inp = node("input");
     lbl.className = "data";

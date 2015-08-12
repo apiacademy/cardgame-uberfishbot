@@ -43,6 +43,7 @@ function fb() {
     var elm, data, flg;
 
     elm = d.find("doc");
+    d.clear(elm);
     if(elm) {
       data = g.body.uber.data;
       if(data.length>0) {
@@ -79,8 +80,7 @@ function fb() {
     flg=false;
     
     // safe form
-    /*
-    if(data.templated && data.templated==="true") {
+    if(data.templated && (data.templated==="true" || data.templated===true)) {
       processTemplate(data, elm);
       flg=true;
     }
@@ -90,7 +90,6 @@ function fb() {
       processModel(data, elm);
       flg=true;
     }
-    */
     
     // image
     if(flg===false && (data.transclude && data.transclude==="true")) {
@@ -131,12 +130,117 @@ function fb() {
       d.push(div, elm);
     }
   }
+
+  function processTemplate(data, elm) {
+    var coll, form, fs, lg, p, inp;
+    var tmpl, query, args, list; 
+    
+    form = d.node("form");
+    form.action = data.url||"#";
+    form.method = g.actions[data.action||"read"];
+    form.onsubmit = httpForm;
+    fs = d.node("fieldset");
+    lg = d.node("legend");
+    lg.innerHTML = (data.label||data.name||data.id||data.rel);
+    d.push(lg, fs);
+    if(data.data) {
+      coll = data.data;
+    }
+    else {
+      query = data.url.substring(data.url.indexOf("{?"),data.url.indexOf('}')+1);
+      list = UriTemplate.parse(query);
+      args = list.expressions[0].varspecs
+      coll = [];
+      for(i=0,x=args.length;i<x;i++) {
+        coll.push({name:args[i].varname,label:args[i].varname,value:""});
+      }
+    }
+    for(i=0,x=coll.length;i<x;i++) {
+      fld = coll[i];
+      p = d.input({
+        prompt:(fld.label||fld.name||fld.id)+"&nbsp;", 
+        name:(fld.name||fld.id),
+        value:"",
+        className:"input"
+      });
+      d.push(p,fs);
+    }
+    p = d.node("p");
+    inp = d.node("input");
+    inp.type="submit";
+    d.push(inp,p);
+    d.push(p,fs);
+    d.push(fs,form);
+    d.push(form,elm);
+  }
+
+  function processModel(data, elm) {
+    var coll, form, fs, lg, p, inp;
+    var tmpl, query;
+    
+    form = d.node("form");
+    form.action = data.url||"#";
+    form.method = g.actions[data.action||"read"];
+    form.onsubmit = httpForm;
+    fs = d.node("fieldset");
+    lg = d.node("legend");
+    lg.innerHTML = (data.label||data.name||data.id||data.rel);
+    d.push(lg, fs);
+    if(data.data) {
+      coll = data.data;
+    }
+    else {
+      query = data.model;
+      list = UriTemplate.parse(query);
+      args = list.expressions[0].varspecs
+      coll = [];
+      for(i=0,x=args.length;i<x;i++) {
+        coll.push({name:args[i].varname,label:args[i].varname,value:""});
+      }
+    }
+    for(i=0,x=coll.length;i<x;i++) {
+      fld = coll[i];
+      p = d.input({
+        prompt:(fld.label||fld.name||fld.id)+"&nbsp;", 
+        name:(fld.name||fld.id),
+        value:"",
+        className:"input"
+      });
+      d.push(p,fs);
+    }
+    p = d.node("p");
+    inp = d.node("input");
+    inp.type="submit";
+    d.push(inp,p);
+    d.push(p,fs);
+    d.push(fs,form);
+    d.push(form,elm);
+  }
   
   // ********************************
   // ajax helpers
   // ********************************
   // mid-level HTTP handlers
 
+  function httpForm(e) {
+    var form, coll, query, i, x, args;
+
+    args = {};
+    form = e.target;
+    query = form.action.replace('%7B?','{?'); 
+    nodes = d.tags("input", form);
+    for (i = 0, x = nodes.length; i < x; i++) {
+      if (nodes[i].name && nodes[i].name !== '') {
+        args[nodes[i].name] = nodes[i].value;
+      }
+    }
+    tmpl = UriTemplate.parse(query);
+    query = tmpl.expand(args);
+    query = query.replace("file:///C:",g.url);
+    req(query, "get", null);
+    return false;
+  }
+  
   function httpGet(e) {
     req(e.target.href, "get", null);
     return false;
