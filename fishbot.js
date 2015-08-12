@@ -62,22 +62,35 @@ function fb() {
   }
   
   function processLink(data, elm) {
-    var a;
+    var a, div;
+
+    if(!data.transclude || data.transclude==="false") {
+      a = d.anchor({"rel":data.rel,"href":data.url,"text":(data.label||data.url)});
+      d.push(a, elm);
+    }
+    else {
+      img = d.image({"rel":data.rel, "href":data.url, "title":(data.label||data.url)});
+      d.push(img, elm);
+    }
     
-    a = d.anchor({"rel":data.rel,"href":data.url,"text":(data.label||data.url)});
-    d.push(a, elm);
     if(data.data) {
-      processData(data.data, elm);
+      div = d.node("div");
+      div.className = "container";
+      processData(data.data, div);
+      d.push(div,elm);
     }
   }
 
   function processValue(data, elm) {
-    var s;
+    var s, div;
 
-    s = d.data({"text":data.label,"value":data.value})
+    s = d.data({"text":(data.label||data.name),"value":data.value})
     d.push(s, elm);
     if(data.data) {
-      processData(data.data,elm);
+      div = d.node("div");
+      div.className = "container";
+      processData(data.data, div);
+      d.push(div, elm);
     }
   }
   

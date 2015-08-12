@@ -219,7 +219,7 @@
               },
               {
                 "name" : "avatar",
-                "url" : "http://example.com/cardgame/avatars/aqswde",
+                "url" : "https://avatars0.githubusercontent.com/u/1976403?v=3&s=120",
                 "rel" : "image",
                 "transclude" : "true"
               }
@@ -241,7 +241,7 @@
               },
               {
                 "name" : "avatar",
-                "url" : "http://example.com/cardgame/avatars/zaxscd",
+                "url" : "https://avatars1.githubusercontent.com/u/30158?v=3&s=120",
                 "rel" : "image",
                 "transclude" : "true"
               }

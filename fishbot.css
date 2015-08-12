@@ -1,0 +1,8 @@
+/*
+*/
+
+.container {margin-left:1em;}
+
+span.prompt {font-weight:bold; padding-right:.2em;text-transform:capitalize;}
+span.prompt::after{content:":"}
+
