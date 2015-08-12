@@ -42,7 +42,64 @@
         "value" : "???",
         "label" : "Hands",
         "data" : [
-          
+          {
+            "name" : "player",
+            "value" : "Ronnie",
+            "label" : "Player",
+            "data" : [
+              {
+                "name" : "cards",
+                "label" : "Cards",
+                "data" : [
+                  {
+                    "name" : "card",
+                    "data" : [
+                      {                
+                        "name" : "rank",
+                        "value" : "2",
+                        "label" : "Rank"
+                      },
+                      {
+                        "name" : "suit",
+                        "value" : "Hearts",
+                        "label" : "Suit"
+                      }
+                    ]
+                  },
+                  {
+                    "name" : "card",
+                    "data" : [
+                      {                
+                        "name" : "rank",
+                        "value" : "5",
+                        "label" : "Rank"
+                      },
+                      {
+                        "name" : "suit",
+                        "value" : "Diamonds",
+                        "label" : "Suit"
+                      }
+                    ]
+                  },
+                  {
+                    "name" : "card",
+                    "data" : [
+                      {                
+                        "name" : "rank",
+                        "value" : "10",
+                        "label" : "Rank"
+                      },
+                      {
+                        "name" : "suit",
+                        "value" : "Clubs",
+                        "label" : "Suit"
+                      }
+                    ]
+                  }                  
+                ]
+              },             
+            ]
+          }
         ]
       },
       {
@@ -57,7 +114,7 @@
       },
       {
         "id" : "activePlayer",
-        "value" : "???",
+        "value" : "Ronnie",
         "label" : "Active Player"
       },
       {
