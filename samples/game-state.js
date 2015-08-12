@@ -8,68 +8,84 @@
         "url" : "http://example.com/cardgame-state" 
       },
       {
-        "id" : "GameID",
-        "value" : "q1w2e3"
+        "id" : "gameID",
+        "value" : "q1w2e3",
+        "label" : "Game ID"
       },
       {
-        "id" : "Deck,
-        "value" : "w2e3r4"
+        "id" : "deckID",
+        "value" : "w2e3r4",
+        "label" : "Deck ID"
       },
       {
         "id" : "opponentsLastMove",
-        "value" : "???"
+        "value" : "???",
+        "label" : "Opponent's Last Move"
       },
       {
-        "id" : "cards_lost",
-        "value" : "???"
+        "id" : "cardsLost",
+        "value" : "???",
+        "label" : "Cards Lost"
       },
       {
-        "id" : "cards_requested",
-        "value" : "???"
+        "id" : "cardsRequested",
+        "value" : "???",
+        "label" : "Cards Requested"
       },
       {
-        "id" : "cards_left",
-        "value" : "???"
+        "id" : "cardsLeft",
+        "value" : "???",
+        "label" : "Cards Left"
       },
       {
-        "id" : "Hands",
-        "value" : "???"
+        "id" : "hands",
+        "value" : "???",
+        "label" : "Hands"
       },
       {
-        "id" : "number_of_cards_opponent_has",
-        "value" : "???"
+        "id" : "OpponentsCardCount",
+        "value" : "???",
+        "label" : "Opponents Card Count"
       },
       {
-        "id" : "my_cards",
-        "value" : "???"
+        "id" : "myCards",
+        "value" : "???",
+        "label" : "My Cards"
       },
       {
         "id" : "activePlayer",
-        "value" : "???"
+        "value" : "???",
+        "label" : "Active Player"
       },
       {
         "id" : "gameState",
-        "value" : "???"
+        "value" : "???",
+        "label" : "Game State"
       },
       {
         "id" : "timeSinceLastMove",
-        "value" : "???"
+        "value" : "???",
+        "label" : "Time Since Last Move"
       },
       {
-        "id" : "Heartbeat",
-        "value" : "???"
+        "id" : "heartbeat",
+        "value" : "???",
+        "label" : "Heartbeat"
       },
       {
-        "id" : "Players",
-        "value" : "???"
+        "id" : "players",
+        "value" : "???",
+        "label" : "Players"
       },
       {
-        "id" : "Books",
-        "value" : "???"
+        "id" : "books",
+        "value" : "???",
+        "label" : "Books"
       },
       {
         "id" : "winner",
-        "value" : "???"
+        "value" : "???",
+        "label" : "Winner"
       }      
     ]
   }
